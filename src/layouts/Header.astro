@@ -48,10 +48,14 @@ const nav = [
   }
 
   .hdr {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     background: var(--bg);
     overflow: hidden;
     font-family: 'Inter', sans-serif;
+    z-index: 1000;
   }
 
   .hdr::after {
