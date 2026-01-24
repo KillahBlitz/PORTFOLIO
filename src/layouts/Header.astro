@@ -1,0 +1,268 @@
+---
+const nav = [
+  { label: "About Me", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "My Projects", href: "#projects" },
+  { label: "Certificates", href: "#certificates" },
+];
+---
+
+<header class="hdr" role="banner">
+  <div class="bg-particles"></div>
+  <div class="inner">
+    <a class="brand" href="/" aria-label="Home">
+      <span class="mark" aria-hidden="true">
+        <img src="/src/assets/beatlecode.jpg" width="50" height="50" alt="Beatlecode" style="border-radius: 50%;" />
+      </span>
+
+      <span class="brandText">
+        <span class="name">Jacobo Monroy</span>
+        <span class="role">Aspiring Full Stack Developer</span>
+      </span>
+    </a>
+
+    <div class="right-section">
+      <nav class="nav" aria-label="Primary">
+        <ul class="navList">
+          {nav.map((item) => (
+            <li>
+              <a class="navLink" href={item.href}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <a class="cta" href="#contact">Contact Me</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  :global(:root) {
+    --bg: #060707;
+    --fg: #e9fff3;
+    --muted: rgba(233, 255, 243, 0.75);
+    --neon: #00ff4c;       
+    --neon-2: #00ff4c;     
+    --line: rgba(4, 65, 22, 0.22);
+  }
+
+  .hdr {
+    position: relative;
+    background: var(--bg);
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .hdr::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon), transparent);
+    animation: neonGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes neonGlow {
+    0%, 100% { opacity: 0.3; transform: scaleX(0.8); }
+    50% { opacity: 1; transform: scaleX(1); }
+  }
+
+  .bg-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 10% 20%, rgba(57,255,20,0.6) 1px, transparent 2px),
+      radial-gradient(circle at 25% 70%, rgba(57,255,20,0.5) 1px, transparent 2px),
+      radial-gradient(circle at 40% 30%, rgba(57,255,20,0.55) 1px, transparent 2px),
+      radial-gradient(circle at 60% 80%, rgba(57,255,20,0.5) 1px, transparent 2px),
+      radial-gradient(circle at 75% 50%, rgba(57,255,20,0.6) 1px, transparent 2px),
+      radial-gradient(circle at 90% 10%, rgba(57,255,20,0.55) 1px, transparent 2px),
+      radial-gradient(circle at 15% 90%, rgba(57,255,20,0.5) 1px, transparent 2px),
+      radial-gradient(circle at 50% 60%, rgba(57,255,20,0.6) 1px, transparent 2px),
+      radial-gradient(circle at 80% 25%, rgba(57,255,20,0.5) 1px, transparent 2px),
+      radial-gradient(circle at 35% 45%, rgba(57,255,20,0.55) 1px, transparent 2px);
+    animation: particleFloat 15s ease-in-out infinite;
+  }
+
+  @keyframes particleFloat {
+    0%, 100% { transform: translateY(0) translateX(0); opacity: 0.5; }
+    25% { transform: translateY(-10px) translateX(5px); opacity: 0.8; }
+    50% { transform: translateY(-5px) translateX(-5px); opacity: 1; }
+    75% { transform: translateY(10px) translateX(5px); opacity: 0.7; }
+  }
+
+  .hdr::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.95;
+    background:
+      linear-gradient(135deg, rgba(57,255,20,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 20% 50%, rgba(57,255,20,0.15) 0%, transparent 70%),
+      radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 60% 80%, rgba(57,255,20,0.08) 0%, transparent 60%),
+  }
+
+  .hdr::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 40%, transparent 0 45%, rgba(0,0,0,0.55) 70%);
+    opacity: 0.7;
+  }
+
+  .inner {
+    position: relative;
+    z-index: 1;
+    height: 92px; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    margin-left: 0;
+  }
+
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .mark {
+    width: 70px;
+    height: 70px;
+    display: grid;
+    place-items: center;
+    color: var(--neon);
+    border-radius: 999px;
+    border: 1px solid rgba(57,255,20,0.35);
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow:
+      0 0 0 1px rgba(57,255,20,0.15) inset,
+      0 0 18px rgba(57,255,20,0.25);
+    backdrop-filter: blur(6px);
+  }
+
+  .brandText {
+    display: grid;
+    line-height: 1.05;
+  }
+
+  .name {
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: var(--fg);
+    font-size: 24px;
+    text-shadow: 0 0 14px rgba(57,255,20,0.18);
+  }
+
+  .role {
+    margin-top: 3px;
+    font-size: 16px;
+    color: rgba(57,255,20,0.9);
+    letter-spacing: 0.3px;
+    font-weight: 400;
+  }
+
+  .nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .navList {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  .navLink {
+    color: rgba(233, 255, 243, 0.85);
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    transition: transform 120ms ease, color 120ms ease, background 120ms ease;
+    font-weight: 500;
+  }
+
+  .navLink:hover {
+    color: var(--fg);
+    background: rgba(57,255,20,0.08);
+    transform: translateY(-1px);
+  }
+
+  .navLink:focus-visible {
+    outline: 2px solid rgba(57,255,20,0.55);
+    outline-offset: 2px;
+  }
+
+  .cta {
+    text-decoration: none;
+    color: rgba(233,255,243,0.95);
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(57,255,20,0.45);
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow:
+      0 0 0 1px rgba(57,255,20,0.15) inset,
+      0 0 22px rgba(57,255,20,0.22);
+    backdrop-filter: blur(8px);
+    transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+    animation: ctaPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes ctaPulse {
+    0%, 100% {
+      box-shadow:
+        0 0 0 1px rgba(57,255,20,0.15) inset,
+        0 0 22px rgba(57,255,20,0.22);
+    }
+    50% {
+      box-shadow:
+        0 0 0 1px rgba(57,255,20,0.25) inset,
+        0 0 30px rgba(57,255,20,0.35);
+    }
+  }
+
+  .cta:hover {
+    transform: translateY(-1px);
+    background: rgba(57,255,20,0.10);
+    box-shadow:
+      0 0 0 1px rgba(57,255,20,0.22) inset,
+      0 0 28px rgba(57,255,20,0.28);
+  }
+
+  .cta:focus-visible {
+    outline: 2px solid rgba(57,255,20,0.6);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 900px) {
+    .brand { min-width: unset; }
+    .nav { display: none; } 
+    .inner { justify-content: space-between; }
+  }
+</style>

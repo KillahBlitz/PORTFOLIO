@@ -1,0 +1,132 @@
+---
+import fondo from '../assets/fondo.png';
+import profile from '../assets/profile.jpeg';
+---
+
+<section id="container">
+  <img src={fondo.src} alt="Background" class="background-img" />
+  <div class="overlay"></div>
+  <div class="founder">
+    <div class="box-container">
+        <div class="separator">
+            <div class="aura">
+                <img src={profile.src} class="profile" />
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #container {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  .founder {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px);
+  }
+
+  .box-container {
+    display: flex;
+    width: 1020px;
+    height: 620px;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 100px;
+    border : 2px var(--neon);
+    box-shadow: 0 0 30px var(--neon);
+  }
+
+  .separator {
+    flex: 1;
+    padding-top: 120px;
+    padding-left: 70px;
+  }
+
+  .aura {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    background: transparent;
+  }
+
+  .aura::before {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    border: 3px solid var(--neon);
+    box-shadow: 
+      0 0 20px var(--neon),
+      0 0 40px var(--neon),
+      inset 0 0 20px var(--neon);
+    animation: neonPulse 2s ease-in-out infinite;
+  }
+
+  .aura::after {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    border: 2px solid var(--neon);
+    opacity: 0.5;
+    box-shadow: 
+      0 0 30px var(--neon),
+      0 0 60px var(--neon);
+    animation: neonPulse 2s ease-in-out infinite reverse;
+  }
+
+  @keyframes neonPulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
+  }
+
+  .profile {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid var(--neon);
+    box-shadow: 0 0 20px var(--neon);
+  }
+
+</style>
