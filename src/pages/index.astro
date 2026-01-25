@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../layouts/Header.astro';
 import AboutMe from '../components/AboutMe.astro';
 import FormationInfo from '../components/FormationInfo.astro';
+import Skills from '../components/Skills.astro';
 import AnimatedBackground from '../components/AnimatedBackground.astro';
 ---
 
@@ -10,9 +11,14 @@ import AnimatedBackground from '../components/AnimatedBackground.astro';
   <Header />
   <main>
 	  <AboutMe />
-    <div id="formation-section" class="with-animated-bg">
+    <div id="container-all" class="with-animated-bg">
       <AnimatedBackground />
-      <FormationInfo />
+      <div id="formation-section">
+        <FormationInfo />
+      </div>
+      <div id="skills-section">
+        <Skills />
+      </div>
     </div>
   </main>
 </Layout>

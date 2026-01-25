@@ -1,0 +1,290 @@
+---
+import infoskills from '../assets/infoskills.json';
+
+const skills = infoskills;
+---
+<section id="skills-section">
+    <div class="skillsContainer">
+        <h2 class="section-title">Skills</h2>
+        <div class="carousel-wrapper">
+            <button class="carousel-btn prev" id="prevBtn">←</button>
+            <div class="skills-carousel">
+                <div class="skills-grid">
+                    {Object.entries(skills).map(([area, data]) => (
+                        <div class="skill-card">
+                            <h3>{area}</h3>
+                            <div class="skill-card-content">
+                                <div class="languages-section">
+                                    <h4>Languages</h4>
+                                    <div class="circle-container">
+                                        {data.lenguajes.map((item, idx, arr) => {
+                                            const angle = (360 / arr.length) * idx;
+                                            const radius = 85;
+                                            const style = `transform: rotate(${angle}deg) translate(${radius}px) rotate(-${angle}deg);`;
+                                            return (
+                                                <div class="language-item" style={style}>
+                                                    {item.icon && <img src={item.icon} alt={item.name} width="28" title={item.name} />}
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+                                <div class="tools-section">
+                                    <h4>Tools</h4>
+                                    <div class="tools-list">
+                                        {data.tools.map((item) => (
+                                            <div class="tool-item">
+                                                {item.icon && <img src={item.icon} alt={item.name} width="26" title={item.name} />}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <button class="carousel-btn next" id="nextBtn">→</button>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        width: 100%;
+        padding: 4rem 0;
+        background: transparent;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .skillsContainer {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        color: var(--fg);
+    }
+
+    .carousel-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        position: relative;
+    }
+
+    .skills-carousel {
+        flex: 1;
+        overflow: hidden;
+        border-radius: 16px;
+        padding: 2rem 0;
+    }
+
+    .skills-grid {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+        gap: 0;
+        padding: 0;
+    }
+
+    .skill-card {
+        flex: 0 0 calc(100% - 84px); /* Ancho de la skill-card */
+        min-height: 380px;
+        background: rgba(0, 0, 0, 0.55);
+        border-radius: 20px;
+        border: 2px solid var(--neon);
+        padding: 2rem 2.5rem;
+        color: var(--fg);
+        box-shadow: 
+            0 0 30px var(--neon),
+            inset 0 0 20px rgba(0, 255, 76, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        backdrop-filter: blur(10px);
+    }
+
+    .skill-card-content {
+        display: flex;
+        gap: 3rem;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
+    .skill-card h3 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 0;
+        font-weight: bold;
+        color: var(--neon);
+        text-shadow: 0 0 15px var(--neon);
+    }
+
+    .languages-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .languages-section h4 {
+        margin: 0;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--neon);
+        opacity: 0.9;
+        padding-bottom: 0.5rem;
+    }
+
+    .circle-container {
+        width: 180px;
+        height: 180px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .circle-container::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px solid var(--neon);
+        opacity: 0.3;
+        box-shadow: 0 0 20px var(--neon);
+    }
+
+    .language-item {
+        position: absolute;
+        width: 46px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 255, 76, 0.1);
+        border: 2px solid var(--neon);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 15px rgba(0, 255, 76, 0.3);
+    }
+
+    .language-item:hover {
+        background: rgba(0, 255, 76, 0.2);
+        box-shadow: 0 0 25px var(--neon);
+        z-index: 10;
+    }
+
+    .language-item img {
+        filter: drop-shadow(0 0 5px var(--neon));
+    }
+
+    .tools-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .tools-section h4 {
+        margin: 0;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--neon);
+        opacity: 0.9;
+    }
+
+    .tools-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .tool-item {
+        width: 46px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 255, 76, 0.1);
+        border: 2px solid var(--neon);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 15px rgba(0, 255, 76, 0.3);
+    }
+
+    .tool-item:hover {
+        transform: scale(1.1);
+        background: rgba(0, 255, 76, 0.2);
+        box-shadow: 0 0 25px var(--neon);
+    }
+
+    .tool-item img {
+        filter: drop-shadow(0 0 5px var(--neon));
+    }
+
+    .carousel-btn {
+        background: rgba(0, 0, 0, 0.55);
+        color: var(--neon);
+        border: 2px solid var(--neon);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+        box-shadow: 0 0 20px var(--neon);
+    }
+
+    .carousel-btn:hover {
+        background: rgba(0, 255, 76, 0.2);
+        transform: scale(1.1);
+        box-shadow: 0 0 30px var(--neon);
+    }
+
+    .carousel-btn:active {
+        transform: scale(0.95);
+    }
+</style>
+
+<script>
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const skillsGrid = document.querySelector('.skills-grid') as HTMLElement;
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        if (!skillsGrid) return;
+        const offset = -currentIndex * 100;
+        skillsGrid.style.transform = `translateX(${offset}%)`;
+    }
+
+    function getMaxIndex() {
+        const cards = document.querySelectorAll('.skill-card');
+        return Math.max(0, cards.length - 1);
+    }
+
+    prevBtn?.addEventListener('click', () => {
+        currentIndex = Math.max(0, currentIndex - 1);
+        updateCarousel();
+    });
+
+    nextBtn?.addEventListener('click', () => {
+        currentIndex = Math.min(getMaxIndex(), currentIndex + 1);
+        updateCarousel();
+    });
+</script>
