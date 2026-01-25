@@ -43,7 +43,11 @@ import profile from '../assets/profile.jpeg';
         </div>
     </div>
     <div class="go-down-pages">
-        
+        <button class="scroll-down-btn" onclick="document.getElementById('formation-section').scrollIntoView({ behavior: 'smooth' })">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
     </div>
   </div>
 </section>
@@ -282,6 +286,45 @@ import profile from '../assets/profile.jpeg';
   .icon-link:hover {
     transform: translateY(-5px);
     filter: drop-shadow(0 0 15px var(--neon));
+  }
+
+  .go-down-pages {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+
+  .scroll-down-btn {
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--neon);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--neon);
+    box-shadow: 0 0 20px var(--neon);
+    transition: all 0.3s ease;
+    animation: bounce 2s infinite;
+  }
+
+  .scroll-down-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px var(--neon);
+    background: rgba(0, 255, 76, 0.1);
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
 </style>

@@ -1,9 +1,10 @@
 ---
 const nav = [
-  { label: "About Me", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "My Projects", href: "#projects" },
-  { label: "Certificates", href: "#certificates" },
+  { label: "About Me", href: "#container" },
+  { label: "Experience", href: "#formation-section" },
+  { label: "Skills", href: "Skills" },
+  { label: "My Projects", href: "Projects" },
+  { label: "Certificates", href: "Certificates" },
 ];
 ---
 
@@ -26,7 +27,7 @@ const nav = [
         <ul class="navList">
           {nav.map((item) => (
             <li>
-              <a class="navLink" href={item.href}>{item.label}</a>
+              <a class="navLink" href={item.href} onclick={item.href.startsWith('#') ? `event.preventDefault(); document.querySelector('${item.href}').scrollIntoView({ behavior: 'smooth' });` : ''}>{item.label}</a>
             </li>
           ))}
         </ul>

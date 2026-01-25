@@ -1,3 +1,571 @@
 <section>
-    <h1>HOLA MUNDO</h1>
+    <div id="ContainerFormation">
+        <div class="school-section">
+            <h2 class="section-title">Education & Learning</h2>
+            <div class="school-box">
+                <div class="featured-school">
+                    <div class="school-content main-school">
+                        <div class="school-logo">
+                            <img src="/esime.jpg" alt="IPN Logo" />
+                        </div>
+                        <div class="school-info">
+                            <h1>National Polytechnic Institute</h1>
+                            <h2>Higher School of Mechanical and Electrical Engineering: Culhuacán Unit.</h2>
+                            <span>Juan 2025 - Dec 2026</span>
+                            <p>Computer Engineering student focused on software development and modern technologies.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="secondary-schools">
+                    <div class="school-card">
+                        <div class="school-content secondary-school">
+                            <div class="school-logo">
+                                <img src="/udemy.png" alt="Udemy Logo" />
+                            </div>
+                            <div class="school-info">
+                                <h1>Udemy</h1>
+                                <h2>Online Learning Platform.</h2>
+                                <span>March 2023 - Present</span>
+                                <p>Completed various courses on web development, programming languages and frameworks.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="school-card">
+                        <div class="school-content secondary-school">
+                            <div class="school-logo">
+                                <img src="/microsoftlearn.png" alt="Microsoft Logo" />
+                            </div>
+                            <div class="school-info">
+                                <h1>Microsoft Learn</h1>
+                                <h2>Online Learning Platform.</h2>
+                                <span>April 2025 - Present</span>
+                                <p>Learning cloud technologies, Azure services, and modern development practices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="work-section">
+            <h2 class="section-title">Work and Professional Projects</h2>
+            <div class="work-box">
+                <div class="work-card">
+                    <div class="work-content main-work">
+                        <div class="work-logo">
+                            <img src="/picaio.jpg" alt="Picaio Logo" />
+                        </div>
+                        <div class="work-info">
+                            <h1>Picaio.</h1>
+                            <h2>Backend Development Intern.</h2>
+                            <span>Aug 2025 - Feb 2026</span>
+                            <p>
+                                • I performed maintenance on legacy code regarding data reconciliation, working with microservices in
+                                    Python with CI/CD, working with standard software workflow and CANVAS.
+                            </p>
+                            <p>
+                                • I worked with LLM models for data extraction using text inferred from machine learning, using schemas
+                                    in JSON.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-content main-work">
+                        <div class="work-logo">
+                            <img src="/huvytas.jpg" alt="Huvytas Logo" />
+                        </div>
+                        <div class="work-info">
+                            <h1>Huvytas Ecommerce.</h1>
+                            <h2>Fullstack Developer.</h2>
+                            <span>July 2025 - Aug 2025</span>
+                            <p>
+                                • With a development team, we created a payment page with an initial product, providing visual 
+                                    development, business logic, and data storage.
+                            </p>
+                            <p>
+                                • Develop a microservices architecture, develop frontend with Vue and backend with Python with 
+                                    deployments on AWS Amplify, AWS Lambda, DynamoDB and AWS Apigateway.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-content main-work">
+                        <div class="work-logo">
+                            <img src="/consultorio.jpg" alt="Consultorio Reynoso Logo" />
+                        </div>
+                        <div class="work-info">
+                            <h1>Reynoso Medical Clinic.</h1>
+                            <h2>Desktop application developer.</h2>
+                            <span>Dec 2025 - Jan 2026</span>
+                            <p>
+                                • I created a Windows desktop application using WPF with XAML and C#. It managed patient data and the
+                                    consultations they had attended.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>
+
+<style>
+    section {
+        position: relative;
+        min-height: 100vh;
+        padding: 100px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #ContainerFormation {
+        max-width: 1200px;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section-title {
+        font-size: 48px;
+        font-weight: 700;
+        color: var(--fg);
+        text-align: center;
+        margin-bottom: 60px;
+        text-shadow: 0 0 20px var(--neon);
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--neon), transparent);
+        box-shadow: 0 0 10px var(--neon);
+    }
+
+    .school-box {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .featured-school {
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards;
+        animation-delay: 0.2s;
+        width: 100%;
+        max-width: 900px;
+    }
+
+    .secondary-schools {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        max-width: 900px;
+        width: 100%;
+    }
+
+    .school-card {
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .school-card:nth-child(1) { animation-delay: 0.4s; }
+    .school-card:nth-child(2) { animation-delay: 0.6s; }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .school-content {
+        display: flex;
+        gap: 30px;
+        padding: 30px;
+        background: rgba(0, 0, 0, 0.4);
+        border: 2px solid rgba(0, 255, 76, 0.3);
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .main-school {
+        border-width: 3px;
+        border-color: rgba(0, 255, 76, 0.5);
+        box-shadow: 0 0 40px rgba(0, 255, 76, 0.2);
+    }
+
+    .secondary-school {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .school-content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(0, 255, 76, 0.1), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .school-content:hover::before {
+        left: 100%;
+    }
+
+    .school-content:hover {
+        border-color: var(--neon);
+        box-shadow: 0 0 30px rgba(0, 255, 76, 0.3);
+        transform: translateY(-5px);
+    }
+
+    .main-school:hover {
+        box-shadow: 0 0 50px rgba(0, 255, 76, 0.4);
+    }
+
+    .school-logo {
+        flex-shrink: 0;
+        width: 120px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 2px solid var(--neon);
+        background: rgba(0, 0, 0, 0.5);
+        padding: 15px;
+        box-shadow: 0 0 20px rgba(0, 255, 76, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .main-school .school-logo {
+        width: 140px;
+        height: 140px;
+        border-width: 3px;
+    }
+
+    .secondary-school .school-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .school-content:hover .school-logo {
+        transform: rotate(360deg) scale(1.1);
+        box-shadow: 0 0 30px var(--neon);
+    }
+
+    .school-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+
+    .school-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .school-info h1 {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--neon);
+        margin: 0;
+        text-shadow: 0 0 10px var(--neon);
+    }
+
+    .main-school .school-info h1 {
+        font-size: 32px;
+    }
+
+    .secondary-school .school-info h1 {
+        font-size: 20px;
+    }
+
+    .school-info h2 {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--fg);
+        margin: 0;
+        opacity: 0.9;
+    }
+
+    .secondary-school .school-info h2 {
+        font-size: 14px;
+    }
+
+    .school-info span {
+        font-size: 14px;
+        color: var(--neon);
+        font-weight: 500;
+        opacity: 0.8;
+        letter-spacing: 0.5px;
+    }
+
+    .school-info p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: rgba(233, 255, 243, 0.85);
+        margin: 10px 0 0 0;
+        padding-left: 15px;
+        border-left: 2px solid var(--neon);
+    }
+
+    .main-school .school-info p {
+        font-size: 17px;
+    }
+
+    .secondary-school .school-info p {
+        font-size: 14px;
+        border-left: none;
+        border-top: 2px solid var(--neon);
+        padding-left: 0;
+        padding-top: 10px;
+    }
+
+    .work-section {
+        margin-top: 100px;
+        width: 100%;
+    }
+
+    .work-box {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .work-card {
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards;
+        width: 100%;
+    }
+
+    .work-card:nth-child(1) { animation-delay: 0.8s; }
+    .work-card:nth-child(2) { animation-delay: 1s; }
+    .work-card:nth-child(3) { animation-delay: 1.2s; }
+
+    .work-content {
+        display: flex;
+        gap: 30px;
+        padding: 30px;
+        background: rgba(0, 0, 0, 0.4);
+        border: 2px solid rgba(0, 255, 76, 0.3);
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .main-work {
+        border-width: 2px;
+        border-color: rgba(0, 255, 76, 0.4);
+        box-shadow: 0 0 25px rgba(0, 255, 76, 0.15);
+    }
+
+    .work-content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(0, 255, 76, 0.1), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .work-content:hover::before {
+        left: 100%;
+    }
+
+    .work-content:hover {
+        border-color: var(--neon);
+        box-shadow: 0 0 35px rgba(0, 255, 76, 0.3);
+        transform: translateX(10px);
+    }
+
+    .work-logo {
+        flex-shrink: 0;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 2px solid var(--neon);
+        background: rgba(0, 0, 0, 0.5);
+        padding: 12px;
+        box-shadow: 0 0 20px rgba(0, 255, 76, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .work-content:hover .work-logo {
+        transform: rotate(360deg) scale(1.1);
+        box-shadow: 0 0 30px var(--neon);
+    }
+
+    .work-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+
+    .work-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .work-info h1 {
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--neon);
+        margin: 0;
+        text-shadow: 0 0 10px var(--neon);
+    }
+
+    .work-info h2 {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--fg);
+        margin: 0;
+        opacity: 0.9;
+    }
+
+    .work-info span {
+        font-size: 14px;
+        color: var(--neon);
+        font-weight: 500;
+        opacity: 0.8;
+        letter-spacing: 0.5px;
+        margin-bottom: 5px;
+    }
+
+    .work-info p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: rgba(233, 255, 243, 0.85);
+        margin: 5px 0;
+        padding-left: 15px;
+        border-left: 2px solid var(--neon);
+        transition: all 0.3s ease;
+    }
+
+    .work-info p:hover {
+        border-left-color: var(--neon);
+        padding-left: 20px;
+        background: rgba(0, 255, 76, 0.05);
+    }
+
+    @media (max-width: 968px) {
+        .secondary-schools {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .secondary-school {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .school-content {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .main-school {
+            flex-direction: column;
+        }
+
+        .school-logo {
+            width: 100px;
+            height: 100px;
+        }
+
+        .main-school .school-logo {
+            width: 120px;
+            height: 120px;
+        }
+
+        .school-info h1 {
+            font-size: 24px;
+        }
+
+        .main-school .school-info h1 {
+            font-size: 28px;
+        }
+
+        .school-info h2 {
+            font-size: 16px;
+        }
+
+        .school-info p {
+            border-left: none;
+            border-top: 2px solid var(--neon);
+            padding-left: 0;
+            padding-top: 10px;
+        }
+
+        .section-title {
+            font-size: 36px;
+        }
+
+        .work-logo {
+            width: 90px;
+            height: 90px;
+        }
+
+        .work-info h1 {
+            font-size: 22px;
+        }
+
+        .work-info h2 {
+            font-size: 16px;
+        }
+
+        .work-info p {
+            border-left: none;
+            border-top: 2px solid var(--neon);
+            padding-left: 0;
+            padding-top: 10px;
+            text-align: left;
+        }
+
+        .work-section {
+            margin-top: 80px;
+        }
+    }
+</style>

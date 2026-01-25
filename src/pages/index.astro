@@ -3,12 +3,22 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../layouts/Header.astro';
 import AboutMe from '../components/AboutMe.astro';
 import FormationInfo from '../components/FormationInfo.astro';
+import AnimatedBackground from '../components/AnimatedBackground.astro';
 ---
 
 <Layout title="Home">
   <Header />
   <main>
 	  <AboutMe />
-    <FormationInfo />
+    <div id="formation-section" class="with-animated-bg">
+      <AnimatedBackground />
+      <FormationInfo />
+    </div>
   </main>
 </Layout>
+
+<style>
+  .with-animated-bg {
+    position: relative;
+  }
+</style>
