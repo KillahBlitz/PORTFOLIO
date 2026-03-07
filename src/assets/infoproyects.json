@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Educational C# Compiler (.NET)",
+    "description": "A simple compiler built with .NET that demonstrates the core phases of compilation, including lexical analysis, parsing, and intermediate code generation. Designed as an educational project to illustrate how modern compilers work internally.",
+    "repository": "https://github.com/KillahBlitz/compiler-v4.02",
+    "tecnologies": ["C#", ".NET", "Windows Forms"],
+    "website": null
+  },
+  {
+    "id": 2,
+    "title": "Local WiFi Security Vulnerability Simulation",
+    "description": "Educational cybersecurity project that demonstrates how a rogue WiFi access point attack works. It simulates a fake network, captures connected device IP addresses, redirects HTTP requests to a malicious page, and illustrates how attackers might deploy payloads to open an SSH port for research and educational purposes.",
+    "repository": "https://github.com/KillahBlitz/proyetoSO",
+    "tecnologies": ["Fedora","Linux","Python","FastAPI","HTML","CSS","Vue","PowerShell","Bash","Batch"],
+    "website": null
+  },
+  {
+    "id": 3,
+    "title": "Student Management Web Platform",
+    "description": "Full-stack academic management system designed to manage students and their grades. Built with ASP.NET Core and React, the platform allows administrators to create accounts, manage academic records, and organize student data efficiently.",
+    "repository": "https://github.com/KillahBlitz/school-web-aspdotnet-react",
+    "tecnologies": ["C#","ASP.NET Core","SQL","SQL Server","ReactJS","HTML","CSS","JavaScript"],
+    "website": null
+  },
+  {
+    "id": 4,
+    "title": "OpenAI Playground with Astro",
+    "description": "Interactive web application that allows users to submit prompts and receive responses from OpenAI in the form of generated text or images. Built with the Astro framework and Svelte to explore modern frontend architecture for AI-powered interfaces.",
+    "repository": "https://github.com/KillahBlitz/openai-with-astro",
+    "tecnologies": ["Astro","Svelte","HTML","CSS","JavaScript","HTTP/REST"],
+    "website": null
+  },
+  {
+    "id": 5,
+    "title": "Rayón Guinda Academic Social Network",
+    "description": "Institutional social network inspired by classroom platforms, allowing students to communicate with peers, review assignments, create posts, and participate in discussion forums. Built as a collaborative academic environment.",
+    "repository": "https://github.com/KillahBlitz/rayon-guinda",
+    "tecnologies": ["C#","ASP.NET Core","ReactJS","HTML","CSS","JavaScript","HTTP","WebSocket"],
+    "website": null
+  },
+  {
+    "id": 6,
+    "title": "GitHub User Statistics Dashboard",
+    "description": "Web application that retrieves and displays GitHub user statistics using the public GitHub API. Built entirely with vanilla JavaScript, HTML, and CSS to demonstrate API consumption and dynamic data visualization.",
+    "repository": "https://github.com/KillahBlitz/api-github-page",
+    "tecnologies": ["HTML","CSS","JavaScript"],
+    "website": "https://projectescv.netlify.app"
+  },
+  {
+    "id": 7,
+    "title": "Simple Task Manager (FastAPI + Vue)",
+    "description": "Lightweight task management application where tasks are stored in the host memory. The backend API is built with FastAPI while Vue handles the interactive user interface.",
+    "repository": "https://github.com/KillahBlitz/task-todo-vue-fastapi",
+    "tecnologies": ["Python","FastAPI","VueJS","HTML","CSS","JavaScript"],
+    "website": null
+  },
+  {
+    "id": 8,
+    "title": "Movie Carousel with Astro and React",
+    "description": "Frontend project that implements a movie carousel using the Astro framework with React components. The application fetches movie data from an external API to display a dynamic movie showcase.",
+    "repository": "https://github.com/KillahBlitz/astro-react-movies",
+    "tecnologies": ["Astro","ReactJS","HTTP/REST","HTML","CSS","JSX"],
+    "website": null
+  },
+  {
+    "id": 9,
+    "title": "Dynamic Form Builder with React",
+    "description": "Interactive dynamic form system where each answer determines the next question shown to the user. Built using React to demonstrate conditional rendering and dynamic form generation.",
+    "repository": "https://github.com/KillahBlitz/form-dinamic-react",
+    "tecnologies": ["React","ReactBootstrap","HTML","CSS","JavaScript"],
+    "website": null
+  },
+  {
+    "id": 10,
+    "title": "React Task Manager with Categories",
+    "description": "Task management application built with React that allows users to categorize tasks. Data is stored directly in the browser without requiring a backend API.",
+    "repository": "https://github.com/KillahBlitz/task-list-react",
+    "tecnologies": ["React","Semantic UI","HTML","CSS","JavaScript"],
+    "website": "https://fanciful-pegasus-9f10c1.netlify.app"
+  },
+  {
+    "id": 11,
+    "title": "Scrollable Blog Layout with Astro and Vue",
+    "description": "Modern scroll-based page layout built with Astro and Vue, designed for blog-style websites with smooth navigation and dynamic content sections.",
+    "repository": "https://github.com/KillahBlitz/scroll-page-astro-vue",
+    "tecnologies": ["Astro","Vue","HTML","CSS","JavaScript"],
+    "website": null
+  },
+  {
+    "id": 12,
+    "title": "Flask Academy Management System",
+    "description": "Academic platform built with Flask and MySQL providing a REST API for managing educational records. The frontend uses vanilla JavaScript to display academic data.",
+    "repository": "https://github.com/KillahBlitz/flask-academy",
+    "tecnologies": ["Python","Flask","SQL","MySQL","HTML","CSS","JavaScript"],
+    "website": null
+  },
+  {
+    "id": 13,
+    "title": "Human Resources Management Platform",
+    "description": "Full-stack HR management system built with Angular and a Flask API connected to MySQL. The platform allows companies to register employees, track positions, and manage salaries.",
+    "repository": "https://github.com/KillahBlitz/human-resources-web",
+    "tecnologies": ["Python","Flask","SQL","MySQL","Angular","HTML","CSS","JavaScript"],
+    "website": null
+  },
+  {
+    "id": 14,
+    "title": "Zona Fit Gym Desktop Application",
+    "description": "Desktop application developed with Python and Tkinter for managing gym memberships. It allows administrators to register new users and store information in a MySQL database.",
+    "repository": "https://github.com/KillahBlitz/zona-fit-app",
+    "tecnologies": ["Python","Tkinter","SQL","MySQL"],
+    "website": null
+  },
+  {
+    "id": 15,
+    "title": "8086 Assembly Programming Collection",
+    "description": "Collection of low-level programming exercises and projects written in 8086 Assembly using the EMU8086 emulator. Demonstrates fundamental concepts of low-level programming and computer architecture.",
+    "repository": "https://github.com/KillahBlitz/Ensambladador8086",
+    "tecnologies": ["Assembly","EMU8086"],
+    "website": null
+  }
+]
