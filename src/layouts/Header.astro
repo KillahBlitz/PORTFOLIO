@@ -4,7 +4,7 @@ const nav = [
   { label: "Experience", href: "#formation-section" },
   { label: "Skills", href: "#skills-section" },
   { label: "My Projects", href: "#projects-section" },
-  { label: "Certificates", href: "Certificates" },
+  { label: "Certificates", href: "#certificates-section" },
 ];
 ---
 
@@ -33,7 +33,7 @@ const nav = [
         </ul>
       </nav>
 
-      <a class="cta" href="#contact">Contact Me</a>
+      <a class="cta" href="#contact-section" onclick="event.preventDefault(); document.querySelector('#contact-section').scrollIntoView({ behavior: 'smooth' });">Contact Me</a>
     </div>
   </div>
 </header>
